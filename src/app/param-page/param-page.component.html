@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h1>Welcome ACM Members!</h1>
+
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="changeHeader()"
+    class="my-5"
+  >
+    Hello!
+  </button>
+
+  @if (name) {
+  <h2>Hello {{ name }}!</h2>
+  <p>Look at the URL!</p>
+  } @else {
+  <h2>This is an ACM Demo App</h2>
+  }
+</div>

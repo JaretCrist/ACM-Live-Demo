@@ -1,0 +1,52 @@
+<div class="mx-3">
+  <!-- Form -->
+  <form [formGroup]="demoForm" class="formColors">
+    <h2>Create a Response</h2>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite Game</mat-label>
+        <input matInput formControlName="favoriteGame" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite Console</mat-label>
+        <mat-select formControlName="favoriteConsole">
+          <mat-option value="Xbox">Xbox</mat-option>
+          <mat-option value="PlayStation">PlayStation</mat-option>
+          <mat-option value="Nintendo Switch">Nintendo Switch</mat-option>
+          <mat-option value="PC">PC</mat-option>
+          <mat-option value="Mobile">Mobile</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a Number</mat-label>
+        <input matInput type="number" formControlName="number" />
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      Submit
+    </button>
+  </form>
+
+  <!-- Past Responses -->
+  <h2 class="my-3">Past Responses</h2>
+
+  @for (res of pastResponses; track res.number) {
+  <div class="response px-3 py-3">
+    <p>Response {{ res.number }}</p>
+    @if (res.favoriteGame) {
+    <p>Favorite Game: {{ res.favoriteGame }}</p>
+    } @if (res.favoriteConsole) {
+    <p>Favorite Console: {{ res.favoriteConsole }}</p>
+    }
+  </div>
+  }
+</div>

@@ -24,7 +24,7 @@ export class FormPageComponent implements OnInit {
 
   demoForm = this.fb.group({
     favoriteGame: [''],
-    favoriteConsole: [''],
+    favoriteConsole: ['PC'],
     number: [0, Validators.required],
   });
 

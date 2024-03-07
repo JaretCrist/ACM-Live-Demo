@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class HeaderComponent {
   @Input() appTitle: string = '';
 
-  constructor(private router: Router, private activeRoute: ActivatedRoute) {}
+  constructor(private router: Router) {}
 
   navigateTo(route: string) {
     this.router.navigateByUrl(route);
